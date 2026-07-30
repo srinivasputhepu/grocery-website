@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreshMart Grocery</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#05070d;
+color:white;
+}
+
+header{
+background:#0b1020;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 5px 20px rgba(0,0,0,.5);
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+color:#28a5ff;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin-left:30px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#28a5ff;
+}
+
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:80px 8%;
+min-height:90vh;
+background:
+linear-gradient(rgba(5,7,13,.85),rgba(5,7,13,.95)),
+url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80");
+background-size:cover;
+background-position:center;
+}
+
+.hero-text{
+width:55%;
+}
+
+.hero h1{
+font-size:65px;
+margin-bottom:20px;
+}
+
+.hero span{
+color:#28a5ff;
+}
+
+.hero p{
+font-size:20px;
+line-height:1.7;
+margin-bottom:30px;
+color:#d8d8d8;
+}
+
+.search{
+display:flex;
+width:100%;
+max-width:650px;
+}
+
+.search input{
+width:100%;
+padding:18px;
+font-size:18px;
+border:none;
+outline:none;
+border-radius:12px 0 0 12px;
+}
+
+.search button{
+padding:18px 35px;
+border:none;
+background:#28a5ff;
+color:white;
+font-size:18px;
+cursor:pointer;
+border-radius:0 12px 12px 0;
+}
+
+.hero-card{
+width:360px;
+padding:30px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+border-radius:20px;
+border:1px solid rgba(255,255,255,.2);
+box-shadow:0 10px 40px rgba(0,0,0,.5);
+}
+
+.hero-card h2{
+margin-bottom:20px;
+color:#28a5ff;
+}
+
+.hero-card li{
+margin:15px 0;
+}
+
+section{
+padding:70px 8%;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+color:#28a5ff;
+}
+
+.categories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
+}
+
+.category{
+background:#111827;
+padding:35px;
+text-align:center;
+border-radius:20px;
+transition:.4s;
+cursor:pointer;
+}
+
+.category:hover{
+transform:translateY(-10px);
+background:#1d4ed8;
+}
+
+.category img{
+width:90px;
+height:90px;
+object-fit:cover;
+border-radius:50%;
+margin-bottom:15px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:#101828;
+border-radius:20px;
+overflow:hidden;
+transition:.4s;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.info{
+padding:20px;
+}
+
+.info h3{
+margin-bottom:10px;
+}
+
+.price{
+font-size:24px;
+color:#29b6ff;
+margin:15px 0;
+font-weight:bold;
+}
+
+button.buy{
+width:100%;
+padding:15px;
+background:#1d4ed8;
+border:none;
+color:white;
+font-size:17px;
+cursor:pointer;
+border-radius:10px;
+transition:.3s;
+}
+
+button.buy:hover{
+background:#2563eb;
+}
+
+.offer{
+background:linear-gradient(135deg,#0f172a,#2563eb);
+padding:70px;
+border-radius:25px;
+text-align:center;
+}
+
+.offer h2{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.offer p{
+font-size:22px;
+margin-bottom:30px;
+}
+
+footer{
+background:#0b1020;
+padding:50px;
+text-align:center;
+margin-top:60px;
+}
+
+footer p{
+color:#bdbdbd;
+line-height:2;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+FreshMart
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#">Categories</a>
+<a href="#">Products</a>
+<a href="#">Offers</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Fresh Grocery <span>Delivered</span> To Your Door</h1>
+
+<p>
+Discover premium quality fruits, vegetables,
+dairy products, beverages, snacks and everyday essentials
+at unbeatable prices.
+</p>
+
+<div class="search">
+
+<input placeholder="Search groceries...">
+
+<button>Search</button>
+
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<h2>Today's Specials</h2>
+
+<ul>
+
+<li>🍎 Fresh Apples - 20% OFF</li>
+<li>🥛 Organic Milk</li>
+<li>🥬 Green Vegetables</li>
+<li>🍌 Farm Fresh Bananas</li>
+<li>🚚 Free Delivery above ₹999</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+Shop By Category
+</h2>
+
+<div class="categories">
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=400">
+<h3>Vegetables</h3>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=400">
+<h3>Fruits</h3>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400">
+<h3>Dairy</h3>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400">
+<h3>Beverages</h3>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?w=400">
+<h3>Bakery</h3>
+</div>
+
+<div class="category">
+<img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=400">
+<h3>Snacks</h3>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+Featured Products
+</h2>
+
+<div class="products">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce">
+
+<div class="info">
+
+<h3>Fresh Apples</h3>
+
+<p>Premium Kashmiri Apples</p>
+
+<div class="price">
+₹180/kg
+</div>
+
+<button class="buy">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e">
+
+<div class="info">
+
+<h3>Organic Vegetables</h3>
+
+<p>Farm Fresh Collection</p>
+
+<div class="price">
+₹220
+</div>
+
+<button class="buy">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1550583724-b2692b85b150">
+
+<div class="info">
+
+<h3>Fresh Milk</h3>
+
+<p>100% Organic</p>
+
+<div class="price">
+₹68
+</div>
+
+<button class="buy">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1577805947697-89e18249d767">
+
+<div class="info">
+
+<h3>Orange Juice</h3>
+
+<p>Natural Fresh Juice</p>
+
+<div class="price">
+₹120
+</div>
+
+<button class="buy">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="offer">
+
+<h2>
+Mega Weekend Sale
+</h2>
+
+<p>
+Flat 40% OFF on selected grocery items.
+Free delivery on orders above ₹999.
+</p>
+
+<button class="buy" style="max-width:250px;">
+Shop Now
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2 style="color:#29b6ff;">
+FreshMart
+</h2>
+
+<p>
+
+Fresh • Healthy • Fast Delivery
+
+<br><br>
+
+Email : support@freshmart.com
+
+<br>
+
+Phone : +91 9876543210
+
+<br><br>
+
+© 2026 FreshMart Grocery Store
+
+</p>
+
+</footer>
+
+</body>
+</html>
