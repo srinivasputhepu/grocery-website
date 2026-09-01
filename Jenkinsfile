@@ -49,15 +49,17 @@ pipeline {
                 }
             }
 
-        stage('Deployment') {
-            steps {
-                sh """
-                    docker rm -f grocery-test || true                  
-                    docker run -d --name grocery-test -p 8081:80 srinivasputhepu/grocery-website:${env.BUILD_NUMBER}
-                    """
-                }
+        stage('EC2 Connection Test') {
+ 	   steps {
+       		 sshagent(['aws-ec2-key']) {
+           		 sh '''
+               			 ssh -o StrictHostKeyChecking=no \
+                   		 ubuntu@13.203.196.98 \
+                   		 "echo Successfully connected to EC2 && hostname"
+           		 '''
         }
-	}
+    }
+}
 
     post {
         always { echo 'Pipeline Finished' }
