@@ -59,7 +59,7 @@ pipeline {
            steps {
              sshagent(['aws-ec2-key']) {
                sh """
-                      ssh -o StrictHostKeyChecking=no ubuntu@13.203.196.98 '
+                      ssh -o StrictHostKeyChecking=no ubuntu@65.0.6.129 '
                          docker pull srinivasputhepu/grocery-website:${BUILD_NUMBER} &&
                          docker rm -f grocery-app || true &&
                          docker run -d --name grocery-app -p 80:80 srinivasputhepu/grocery-website:${BUILD_NUMBER}
